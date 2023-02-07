@@ -1,4 +1,4 @@
 import { Pool } from "pg";
 import config from "./db.config";
 
-const pool = new Pool(config);
+export const pool = new Pool(config);
