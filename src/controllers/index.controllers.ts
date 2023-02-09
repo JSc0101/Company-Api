@@ -48,3 +48,14 @@ export const updateUser = async (
     "user update succesfuly": "update",
   });
 };
+
+export const deleteUser = async (
+  req: Request,
+  res: Response
+): Promise<Response> => {
+  const id = req.params.id;
+  await pool.query("DELETE FROM employees WHERE id = $1", [id]);
+  return res.json({
+    user: "succesfuly delete",
+  });
+};
